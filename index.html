@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ==" crossorigin="" />
+<script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ==" crossorigin=""></script>
+
+
+
+
+<style>
+#map { height: 50em; width:50vw; margin:2em auto; }
+.leaflet-container{
+    background: transparent;
+}
+
+.leaflet-tile-pane{
+    opacity:0;
+}
+
+.leaflet-control-attribution {
+    display:none;
+}
+
+.leaflet-control-container{
+    display:none;
+
+}
+
+.leaflet-interactive{
+    stroke: #eff4f7;
+    stroke-width:1px;
+    fill: #3f3f3f;
+    fill-opacity: 1;
+    cursor:default;
+}
+
+.leaflet-marker-icon{
+  margin:0 !important;
+
+}
+
+
+.marker-pin {
+  position: relative;
+  display: block;
+  width: 20px !important;
+  height: 20px !important;
+  border-radius: 50%;
+  cursor:pointer;
+}
+
+#map .marker-pin {
+  background: #27a9e1;
+}
+
+@keyframes pulse {
+  0%,
+  30% {
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  80%,
+  100% {
+    width: 60px;
+    height: 60px;
+    opacity: 0;
+  }
+}
+
+
+.marker-pin::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1px;
+  height: 1px;
+  border-radius: inherit;
+  border: 2px solid;
+  transform: translate(-50%, -50%);
+  animation: pulse 3s 3s infinite linear;
+}
+
+#map .marker-pin::before {
+  border-color: #27a9e1;
+ 
+}
+
+.leaflet-tooltip {
+  color: #3f3f3f;
+    padding: 0.5rem 1rem;
+  transition: opacity 0.5s;
+}
+
+.leaflet-tooltip-left:before,
+.leaflet-tooltip-right:before {
+  display: none;
+}
+
+</style>
+
+
+
+</head>
+<body>
+    <div id="map"></div>
+    
+    
+</body>
+
+<script src="js.js" ></script>
+</html>
